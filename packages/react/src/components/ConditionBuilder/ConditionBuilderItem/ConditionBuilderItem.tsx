@@ -177,7 +177,7 @@ export const ConditionBuilderItem = ({
       }
       if (condition.popoverToOpen == currentField) {
         //current popover need to be opened
-        setTimeout(() => {
+        queueMicrotask(() => {
           openPopOver();
         });
       }
@@ -196,7 +196,7 @@ export const ConditionBuilderItem = ({
         'input,textarea'
       ) as HTMLInputElement;
       if (firstFocusableElement) {
-        setTimeout(() => firstFocusableElement.focus(), 0);
+        queueMicrotask(() => firstFocusableElement.focus());
       }
     }
   }, [popoverRef, open]);
